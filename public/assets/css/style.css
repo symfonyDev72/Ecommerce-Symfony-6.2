@@ -64,3 +64,15 @@
     bottom: 6%;
     right: 10%;
 }
+
+/* Home / Meilleures ventes */
+
+.img-best {
+
+    transition: transform ease-in-out .4s;
+}
+
+.img-best:hover {
+
+    transform: scale(1.1);
+}
