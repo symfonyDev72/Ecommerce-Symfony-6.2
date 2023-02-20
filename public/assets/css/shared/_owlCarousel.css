@@ -1,0 +1,13 @@
+/* Home/owlcarousel header */
+.item-banners {
+
+    max-height: 500px;
+
+}
+
+/* Home/owlcarousel brands */
+.item-brands {
+
+    max-height: 130px;
+    padding: 0 30px;
+}

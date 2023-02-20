@@ -1,0 +1,43 @@
+/* pre header */
+
+.info-preheader,
+.a-preheader {
+
+    font-size: 17px;
+}
+
+.a-preheader:hover {
+
+    color: var(--main) !important;
+}
+
+#search-modal,
+#btn-modal {
+
+    height: 45px;
+}
+
+.w-modal {
+
+    width: 450px;
+}
+
+/* navbar */
+
+.main-nav .nav-link {
+
+    font-size: 17px;
+}
+
+.actif-nav-link {
+
+    background-color: var(--main) !important;
+    padding: 0 15px;
+    border-radius: 22px;
+    width: max-content;
+}
+
+.actif-nav-link .actif {
+
+    color: #ffffff;
+}

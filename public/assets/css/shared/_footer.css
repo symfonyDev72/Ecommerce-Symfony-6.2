@@ -1,0 +1,35 @@
+.facebook {
+    color: #435f9f;
+}
+
+.twitter {
+
+    color: #00aaf0;
+}
+
+.pinterest {
+
+    color: #ce1f21;
+}
+
+.linkedin {
+
+    color: #4875b2;
+}
+
+.instagram {
+
+    color: #8a3ab8;
+}
+
+.foot-links {
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.foot-links:hover {
+
+    text-decoration: underline;
+    color: var(--main);
+}

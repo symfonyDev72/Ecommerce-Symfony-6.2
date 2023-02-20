@@ -1,0 +1,91 @@
+<!-- *** pre-navbar **** -->
+
+<div class="container-fluid bg-dark py-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 d-lg-flex justify-content-lg-between">
+				<ul class="d-flex list-unstyled text-white my-lg-auto my-3">
+					<li>
+						<span class="info-preheader">
+							<i class="fa-solid fa-phone"></i>&emsp;0875142588</span>
+					</li>
+					<li class="ps-3">
+						<span class="info-preheader">
+							<i class="fa-solid fa-envelope"></i>&emsp;boutique@msn.fr</span>
+					</li>
+				</ul>
+				<ul class="d-flex list-unstyled my-auto">
+					<li class="px-3">
+						<a class="text-decoration-none text-white a-preheader" href="#">
+							<i class="fa-regular fa-user"></i>
+						</a>
+					</li>
+					<li class="px-3">
+						<a class="text-decoration-none text-white a-preheader" href="#">
+							<i class="fa-solid fa-cart-shopping"></i>
+						</a>
+					</li>
+					<li class="px-3">
+						<a class="text-decoration-none text-white a-preheader" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal bg-transparent fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered bg-transparent">
+		<div class="modal-dialog bg-transparent mx-auto w-modal">
+			<div class="modal-content bg-transparent border-0">
+				<div class="modal-header border-0">
+					<button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group border">
+						<input id="search-modal" type="search" placeholder="Your request" aria-describedby="btn-modal" class="form-control border-0 shadow-0 rounded-0">
+						<div class="input-group-append">
+							<button id="btn-modal" type="submit" class="btn">
+								<i class="fa fa-paper-plane text-white"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- *****************navbar********************** -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3 main-nav">
+	<div class="container">
+		<a class="navbar-brand" href="index.html">
+			<img src="{{ asset('assets/img/logo.png')}}" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse mt-lg-0 mt-3" id="navbarNavAltMarkup">
+			<div class="navbar-nav mx-lg-auto">
+				<ul class="list-unstyled d-lg-flex my-auto">
+					<li class="{{ _route == 'app_home' ? 'actif-nav-link' : '' }}">
+						<a class="nav-link {{ _route == 'app_home' ? 'actif' : '' }}" aria-current="page" href="index.html">Accueil</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">Boutique</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">A propos</a>
+					</li>
+					<li>
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+				</div>
+
+			</div>
+		</div>
+	</nav>

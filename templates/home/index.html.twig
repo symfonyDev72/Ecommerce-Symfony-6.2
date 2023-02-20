@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+	{# ----------------------owlcarousel--------------------------- #}
+
+	{% include "partials/_owlCarousel.html.twig" %}
+
+	<!-- *******************Meilleures ventes************************** -->
+
+	<div class="container mt-5">
+		<div class="row mb-5 pb-lg-5">
+			<h2 class="text-center mb-5">Nos meilleures ventes</h2>
+			<!-- produit1 -->
+			<div class="col-lg-3 col-md-6 col-12">
+				<div class="card border-0">
+					<img src="{{ asset('assets/img/bonnet2.jpg')}}" class="card-img-top" alt="...">
+					<div class="card-body text-center">
+						<h5 class="card-title">Bonnet Artic</h5>
+						<p class="card-text">Some quick example text to build on the card title hover</p>
+						<span class="fs-4">58&euro;</span>
+					</div>
+				</div>
+			</div>
+			<!-- produit 2 -->
+			<div class="col-lg-3 col-md-6 col-12">
+				<div class="card border-0">
+					<img src="{{ asset('assets/img/manteau1.jpg')}}" class="card-img-top" alt="...">
+					<div class="card-body text-center">
+						<h5 class="card-title">Veste Cintrée</h5>
+						<p class="card-text">Some quick example text to build on the card title hover</p>
+						<span class="fs-4">82&euro;</span>
+					</div>
+				</div>
+			</div>
+			<!-- produit 3 -->
+			<div class="col-lg-3 col-md-6 col-12">
+				<div class="card border-0">
+					<img src="{{ asset('assets/img/echarpe2.jpg')}}" class="card-img-top" alt="...">
+					<div class="card-body text-center">
+						<h5 class="card-title">Echarpe Livia</h5>
+						<p class="card-text">Some quick example text to build on the card title hover</p>
+						<span class="fs-4">39&euro;</span>
+					</div>
+				</div>
+			</div>
+			<!-- produit 4 -->
+			<div class="col-lg-3 col-md-6 col-12">
+				<div class="card border-0">
+					<img src="{{ asset('assets/img/tshirt2.jpg')}}" class="card-img-top" alt="...">
+					<div class="card-body text-center">
+						<h5 class="card-title">T-shirt Manche</h5>
+						<p class="card-text">Some quick example text to build on the card title hover</p>
+						<span class="fs-4">12&euro;</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- *******************Rubriques************************** -->
+
+		<!-- Rubrique 1 -->
+		<section class="row">
+			<div class="col-lg-7 mb-lg-0 mb-3">
+				<h2>First featurette heading.
+					<span class="text-muted">It’ll blow your mind.</span>
+				</h2>
+				<p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+				<p class="mt-3 lead fst-italic">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore temporibus, exercitationem fuga quam quia perspiciatis veniam ex, ullam omnis, ipsam accusamus veritatis voluptate blanditiis? Accusantium optio quisquam iure? Recusandae, perferendis? Dolor, repudiandae modi. Impedit accusantium minus porro. Quaerat, iusto? Error officiis, quod, cumque sed ex recusandae adipisci est repellat odit repellendus necessitatibus aspernatur, illo culpa ratione omnis beatae id! Doloribus.</p>
+			</div>
+			<div class="col-lg-5">
+				<img src="{{ asset('assets/img/rubrique1.jpg')}}" alt="" class="img-fluid">
+			</div>
+		</section>
+
+		<hr
+		class="my-5">
+
+		<!-- Rubrique 2 -->
+		<section class="row pb-lg-5">
+			<div class="col-lg-5 mb-lg-0 mb-3">
+				<img src="{{ asset('assets/img/rubrique2.jpg')}}" alt="" class="img-fluid">
+			</div>
+			<div class="col-lg-7">
+				<h2>First featurette heading.
+					<span class="text-muted">It’ll blow your mind.</span>
+				</h2>
+				<p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting  prose here.</p>
+				<p class="mt-3 lead fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore perspiciatis ab reiciendis consequatur mollitia, recusandae magni similique? Totam modi ducimus error amet odio velit, nihil, laboriosam qui, culpa voluptas dolorem.
+																			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim laudantium ex laborum quia quae culpa aliquam deserunt nemo quo eaque. Consequuntur ipsa ullam in sapiente tenetur eaque aut amet quia?</p>
+			</div>
+		</section>
+	</div>
+
+	<!-- ********************* Catégories Isotope ******************** -->
+
+
+	<!-- *********************Transition ***************************** -->
+
+
+	<div class="container-fluid my-5 cut">
+		<div class="text-white txt-cut">
+			<h2 class="h1 pt-5">Nouvelle collection</h2>
+			<p class="fs-5 fst-italic">"Lorem ipsum dolor sit amet consectetur .<br>
+				Adipisicing elit nuisquam nisi excepturi"</p>
+			<button class="btn btn-custom text-uppercase">Découvrir</button>
+		</div>
+	</div>
+
+
+	<!-- *******************BRANDS************************* -->
+	<div class="container mt-5 pt-lg-5">
+		<section class="row">
+			<h2 class="text-center mb-5">Nos marques</h2>
+			<div class="col-lg-6 offset-lg-3 border-0">
+				<div id="owl-brands" class="owl-carousel owl-theme">
+					<div class="item item-brands">
+						<img src="{{ asset('assets/img/brand_01.png')}}" class="img-fluid w-100">
+					</div>
+					<div class="item item-brands">
+						<img src="{{ asset('assets/img/brand_02.png')}}" class="img-fluid w-100">
+					</div>
+					<div class="item item-brands">
+						<img src="{{ asset('assets/img/brand_03.png')}}" class="img-fluid w-100">
+					</div>
+					<div class="item item-brands">
+						<img src="{{ asset('assets/img/brand_04.png')}}" class="img-fluid w-100">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+</div>{% endblock %}
