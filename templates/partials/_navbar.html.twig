@@ -3,8 +3,8 @@
 <div class="container-fluid bg-dark py-2">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 d-lg-flex justify-content-lg-between">
-				<ul class="d-flex list-unstyled text-white my-lg-auto my-3">
+			<div class="col-12 d-lg-flex">
+				<ul class="d-flex list-unstyled text-white me-auto my-auto">
 					<li>
 						<span class="info-preheader">
 							<i class="fa-solid fa-phone"></i>&emsp;0875142588</span>
@@ -14,23 +14,40 @@
 							<i class="fa-solid fa-envelope"></i>&emsp;boutique@msn.fr</span>
 					</li>
 				</ul>
-				<ul class="d-flex list-unstyled my-auto">
-					<li class="px-3">
-						<a class="text-decoration-none text-white a-preheader" href="#">
-							<i class="fa-regular fa-user"></i>
-						</a>
-					</li>
-					<li class="px-3">
-						<a class="text-decoration-none text-white a-preheader" href="#">
+				<ul class="d-flex list-unstyled ms-auto my-auto">
+					<li class="ps-lg-3">
+						<a class="text-decoration-none text-white a-preheader" href="#" title="panier">
 							<i class="fa-solid fa-cart-shopping"></i>
 						</a>
 					</li>
-					<li class="px-3">
-						<a class="text-decoration-none text-white a-preheader" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+					<li class="px-4">
+						<a class="text-decoration-none text-white a-preheader" href="#" title="Recherche" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</a>
 					</li>
+					{% if app.user == null %}
+						<li class="">
+							<a class="text-decoration-none text-white a-preheader" href="{{ path('app_login') }}" title="Connexion">
+								<i class="fa-regular fa-user"></i>
+							</a>
+						</li>
+					{% endif %}
 				</ul>
+				{% if app.user %}
+					<ul class="list-unstyled d-flex my-auto pt-lg-0 pt-3">
+						<li class="d-flex align-items-center">
+							<img src="{{ asset('assets/img/user.png') }}" alt="user-avatar" width="25" class="rounded-circle">
+							<p class="text-warning my-auto fw-bold ps-2">{{ app.user.fullName }}</p>
+						</li>
+						<li class="ps-3">
+							<a
+								class="my-auto" href="{{ path('app_logout') }}" title="Se déconnecter">
+								{# <i class="fa-solid fa-right-from-bracket"></i> #}
+								<img src="{{ asset('assets/img/logout.png') }}" alt="logout-btn" width="25">
+							</a>
+						</li>
+					</ul>
+				{% endif %}
 			</div>
 		</div>
 	</div>
@@ -78,9 +95,15 @@
 					<li>
 						<a class="nav-link" href="#">Boutique</a>
 					</li>
-					<li>
-						<a class="nav-link {{ _route == 'app_register' ? 'actif' : '' }}" href="{{ path('app_register')}}">Inscription</a>
-					</li>
+					{% if app.user %}
+						<li>
+							<a href="#" class="nav-link">Mon compte</a>
+						</li>
+					{% else %}
+						<li>
+							<a class="nav-link {{ _route == 'app_register' ? 'actif' : '' }}" href="{{ path('app_register')}}">Inscription</a>
+						</li>
+					{% endif %}
 					<li>
 						<a class="nav-link" href="#">Contact</a>
 					</li>
