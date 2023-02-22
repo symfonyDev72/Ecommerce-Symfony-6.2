@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Entity\Traits\Timestampable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -22,7 +23,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180, unique: true)]
+    #[ORM\Column(length: 255, unique: true)]
+    #[Assert\NotBlank(message: 'Veuillez indiquer une adresse email.')]
+    #[Assert\Email(
+        message: 'L"adresse {{ value }} n"est pas un email valide.',
+    )]
     private ?string $email = null;
 
     #[ORM\Column]
@@ -35,9 +40,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez indiquer votre prénom.')]
+    #[Assert\Length(min: 3, minMessage: 'Votre prénom doit contenir au moins 3 caractères.')]
     private ?string $firstName = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez indiquer votre nom.')]
+    #[Assert\Length(min: 3, minMessage: 'Votre prénom doit contenir au moins 3 caractères.')]
     private ?string $lastName = null;
 
     #[ORM\Column(type: 'boolean')]
