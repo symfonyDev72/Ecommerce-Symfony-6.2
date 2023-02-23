@@ -40,12 +40,15 @@
 							<p class="text-warning my-auto fw-bold ps-2">{{ app.user.fullName }}</p>
 						</li>
 						<li class="ps-3">
-							<a
-								class="my-auto" href="{{ path('app_logout') }}" title="Se déconnecter">
-								{# <i class="fa-solid fa-right-from-bracket"></i> #}
+							<a class="my-auto" href="#" title="Se déconnecter" onclick="event.preventDefault(); document.getElementById('js-logout-form').submit();">
 								<img src="{{ asset('assets/img/logout.png') }}" alt="logout-btn" width="25">
 							</a>
 						</li>
+
+						<form class="d-none" id="js-logout-form" action="{{ path('app_logout') }}" method="POST">
+							<input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
+						</form>
+
 					</ul>
 				{% endif %}
 			</div>
