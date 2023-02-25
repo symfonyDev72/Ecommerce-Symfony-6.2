@@ -1,7 +1,9 @@
-@import "shared/_colors.css";
-@import "shared/_navbar.css";
-@import "shared/_footer.css";
-@import "shared/_owlCarousel.css";
+@import "~bootstrap/scss/bootstrap";
+@import "shared_scss/_variables";
+@import "shared_scss/_navbar";
+@import "shared_scss/_footer";
+@import "shared_scss/_owlCarousel";
+
 
 * {
     margin: 0;
@@ -52,21 +54,18 @@
 
     height: 400px;
     position: relative;
-    background-image: url("../../assets/img/cut.jpg");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .txt-cut {
-
     position: absolute;
     bottom: 6%;
     right: 10%;
 }
 
 /* Home / Meilleures ventes */
-
 .img-best {
 
     transition: transform ease-in-out .4s;

@@ -1,6 +1,7 @@
 // owlcaroussel
-$(document).ready(function() {
 
+//remplacement de  $(document).ready(function() { par
+$(function() {
     $('#owl-banners').owlCarousel({
         animateIn: 'fadeIn',
         animateOut: 'fadeOut', 
