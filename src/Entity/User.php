@@ -37,6 +37,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Veuillez indiquer un mot de passe.')]
+    #[Assert\Length(min: 6, max: 4096, minMessage: 'Le mot de passe doit contenir au moins 6 caractères.')]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
@@ -51,6 +53,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $avatar = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $gender = null;
 
     public function getId(): ?int
     {
@@ -160,6 +168,40 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getAvatar(): ?string
+    {
+
+        if ($this->avatar == null && $this->getGender() == 'homme') {
+
+            return "build/img/man.png";
+        } elseif ($this->avatar == null && $this->getGender() == 'femme') {
+
+            return "build/img/woman.png";
+        } else {
+
+            return $this->avatar;
+        }
+    }
+
+    public function setAvatar(?string $avatar): self
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    public function getGender(): ?string
+    {
+        return $this->gender;
+    }
+
+    public function setGender(string $gender): self
+    {
+        $this->gender = $gender;
 
         return $this;
     }

@@ -43,7 +43,7 @@ class RegistrationController extends AbstractController
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
-                    $form->get('plainPassword')->getData()
+                    $form->get('password')->getData()
                 )
             );
 
@@ -64,7 +64,7 @@ class RegistrationController extends AbstractController
 
             $this->addFlash('success', 'Félicitations,votre compte vient d\'être créé.
             Un email de validation vous a été envoyé et expirera dans une heure.
-            Pensez bien à confirmer votre adresse email');
+            N\'oubliez pas de confirmer votre adresse email.');
 
             return $this->redirectToRoute('app_home');
         }

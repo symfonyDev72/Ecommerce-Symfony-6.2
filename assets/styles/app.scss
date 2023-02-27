@@ -11,7 +11,7 @@
     box-sizing: border-box;
 }
 
-/* **** Root Colors,BackgroundColor & Button */
+/* *** Root Colors,BackgroundColor & Button */
 .txt-theme {
 
     color: var(--main);
@@ -47,6 +47,11 @@
 
 .btn-custom:hover {
     background-color: var(--btn-hover);
+}
+
+.bg-form {
+
+    background-color: var(--bg-form) !important;
 }
 
 /*  Home / Trasition full width */

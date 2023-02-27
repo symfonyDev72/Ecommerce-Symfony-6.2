@@ -7,41 +7,33 @@
 	<div class="container mt-5">
 		<div class="row">
 
-			<div class="col-lg-6 offset-lg-3 my-5 border rounded p-5 bg-light">
+			<h1 class="text-center text-muted">Inscription</h1>
 
-				<h1 class="text-center mb-5">Créer un compte</h1>
+			<div class="col-lg-6 offset-lg-3 mb-5 mt-3 border rounded p-5 bg-form">
+
+				<div class="d-flex mb-5">
+					<img src="{{ asset('build/img/register.png') }}" class="img-fluid m-auto" width="250">
+				</div>
 
 				{% for flash_error in app.flashes('verify_email_error') %}
 					<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 				{% endfor %}
 
-
 				{{ form_start(registrationForm) }}
 
-				<div class="row">
+				{{ form_row(registrationForm.gender) }}
+				<div class="row mt-5">
 					<div class="col-lg-6">
-						{{ form_row(registrationForm.firstName,{
-					label:'Prénom'}) 
-					}}
+						{{ form_row(registrationForm.firstName) }}
 					</div>
 					<div class="col-lg-6">
-						{{ form_row(registrationForm.lastName,{
-					label:'Nom'}) 
-					}}
+						{{ form_row(registrationForm.lastName) }}
 					</div>
 				</div>
-
-				{{ form_row(registrationForm.email,{
-					label:'Adresse email'}) 
-				}}
-
-				{{ form_row(registrationForm.plainPassword, {
-                    label: 'Mot de passe'}) 
-				}}
-
-				{{ form_row(registrationForm.agreeTerms,{
-					label:'J\'accepte les termes et les conditions d\'utilisation'}) 
-				}}
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.password.first) }}
+				{{ form_row(registrationForm.password.second) }}
+				{{ form_row(registrationForm.agreeTerms) }}
 
 				<button type="submit" class="btn btn-primary fs-5 w-100 mt-5" formnovalidate>Créer</button>
 
