@@ -15,7 +15,7 @@ class LoginSecurityController extends AbstractController
     {
         if ($this->getUser()) {
             $this->addFlash('warning', 'Vous êtes déjà connecté(e)!');
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_account');
         }
 
         // get the login error if there is one

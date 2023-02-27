@@ -36,12 +36,12 @@
 				{% if app.user %}
 					<ul class="list-unstyled d-flex my-auto pt-lg-0 pt-3">
 						<li class="d-flex align-items-center">
-							<img src="{{ asset('assets/img/user.jpg') }}" alt="user-avatar" width="25" class="rounded-circle">
-							<p class="text-warning my-auto fw-bold ps-2">{{ app.user.fullName }}</p>
+							<img src="{{ asset(app.user.avatar) }}" alt="user-avatar" width="25" class="rounded-circle">
+							<p class="text-warning my-auto fw-bold ps-2">{{ app.user.fullName|title }}</p>
 						</li>
 						<li class="ps-3">
 							<a class="my-auto" href="#" title="Se déconnecter" onclick="event.preventDefault(); document.getElementById('js-logout-form').submit();">
-								<img src="{{ asset('assets/img/logout.png') }}" alt="logout-btn" width="25">
+								<img src="{{ asset('build/img/logout.png') }}" alt="logout-btn" width="25">
 							</a>
 						</li>
 
@@ -56,7 +56,7 @@
 	</div>
 </div>
 
-<!-- Modal -->
+<!-- Search Modal -->
 <div class="modal bg-transparent fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered bg-transparent">
 		<div class="modal-dialog bg-transparent mx-auto w-modal">
@@ -99,8 +99,8 @@
 						<a class="nav-link" href="#">Boutique</a>
 					</li>
 					{% if app.user %}
-						<li>
-							<a href="#" class="nav-link">Mon compte</a>
+						<li class="{{ _route == 'app_account' ? 'actif-nav-link' : '' }}">
+							<a class="nav-link {{ _route == 'app_account' ? 'actif' : '' }}" href="{{ path('app_account')}}">Mon compte</a>
 						</li>
 					{% else %}
 						<li>

@@ -47,8 +47,8 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // Success flash message:
-        $request->getSession()->getFlashBag()->add('success', 'Bienvenue ' . $token->getUser()->getFullName());
-        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        $request->getSession()->getFlashBag()->add('success', 'Bienvenue ' . ucwords($token->getUser()->getFullName()));
+        return new RedirectResponse($this->urlGenerator->generate('app_account'));
         throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
     }
 

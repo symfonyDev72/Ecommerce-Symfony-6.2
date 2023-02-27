@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	{% include "partials/_flash_message.html.twig" %}
+
+	<div class="container">
+
+		<div class="row my-5">
+			<div class="col-12">
+				<h1 class="display-5">{{ title }}</h1>
+			</div>
+		</div>
+
+		{% if app.user %}
+			<div class="row">
+				<div class="col-lg-6 mx-lg-auto">
+					<div class="card shadow border-0 bg-form">
+						<div class="d-flex mt-4">
+							<img src="{{ asset(app.user.avatar) }}" class="card-img-top rounded-circle img-fluid w-50 m-auto">
+						</div>
+						<div class="card-body text-center">
+							<h3 class="card-title">{{ app.user.fullName|title  }}</h3>
+							<p>Genre :
+								{{ app.user.gender|title  }}
+							</p>
+							<p class="h5">Membre depuis le :
+								<span class="ps-1 text-primary">{{ app.user.createdAt|date("d/m/Y") }}</span>
+							</p>
+							{% if app.user.isVerified %}
+								<p class="p-2 rounded lead mt-3">
+									Adresse email :
+									<span class="text-success fw-bold">Vérifiée</span>&nbsp;
+									<img src="{{ asset('assets/img/true.png') }}" width="25">
+								</p>
+							{% else %}
+								<p class="p-2 rounded lead mt-3">
+									Adresse email :
+									<span class="text-danger fw-bold">Non vérifiée</span>&nbsp;
+									<img src="{{ asset('build/img/false.png') }}" width="25">
+								</p>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+
+{% endblock %}
