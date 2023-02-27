@@ -80,3 +80,10 @@
 
     transform: scale(1.1);
 }
+
+// register form
+.form-check-input:checked{
+
+    border: 1px solid var(--radio) !important;
+    background-color: var(--radio) !important;
+}

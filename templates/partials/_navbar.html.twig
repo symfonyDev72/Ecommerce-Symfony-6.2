@@ -81,10 +81,11 @@
 
 
 <!-- *****************navbar********************** -->
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3 main-nav">
 	<div class="container">
 		<a class="navbar-brand" href="{{ path('app_home')}}">
-			<img src="{{ asset('assets/img/logo.png')}}" alt="">
+			<img src="{{ asset('build/img/logo.png')}}" alt="">
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -103,7 +104,7 @@
 							<a class="nav-link {{ _route == 'app_account' ? 'actif' : '' }}" href="{{ path('app_account')}}">Mon compte</a>
 						</li>
 					{% else %}
-						<li>
+						<li class="{{ _route == 'app_register' ? 'actif-nav-link' : '' }}">
 							<a class="nav-link {{ _route == 'app_register' ? 'actif' : '' }}" href="{{ path('app_register')}}">Inscription</a>
 						</li>
 					{% endif %}

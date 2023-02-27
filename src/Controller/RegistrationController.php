@@ -66,7 +66,7 @@ class RegistrationController extends AbstractController
             Un email de validation vous a été envoyé et expirera dans une heure.
             N\'oubliez pas de confirmer votre adresse email.');
 
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('registration/register.html.twig', [
@@ -93,6 +93,6 @@ class RegistrationController extends AbstractController
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
         $this->addFlash('success', 'Votre adresse e-mail a bien été vérifiée.');
 
-        return $this->redirectToRoute('app_home');
+        return $this->redirectToRoute('app_account');
     }
 }
