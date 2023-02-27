@@ -21,7 +21,7 @@
 			<div class="col-lg-6 offset-lg-3 mb-5 mt-3 border rounded p-5 bg-form">
 
 				<div class="d-flex mb-5">
-					<img src="{{ asset('build/img/login1.png') }}" class="img-fluid m-auto" width="250">
+					<img src="{{ asset('build/img/login1.png') }}" class="img-fluid m-auto" width="150">
 				</div>
 
 				<form method="post">
@@ -47,13 +47,13 @@
 					type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 					{#
-																																																																																															Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-																																																																																															See https://symfony.com/doc/current/security/remember_me.html
-																																																																																															<div class="checkbox mb-3">
-																																																																																															<label>
-																																																																																															<input type="checkbox" name="_remember_me"> Remember me																												</label>
-																																																																																															</div>
-																																																																																															#}
+																																																																																																									Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+																																																																																																									See https://symfony.com/doc/current/security/remember_me.html
+																																																																																																									<div class="checkbox mb-3">
+																																																																																																									<label>
+																																																																																																									<input type="checkbox" name="_remember_me"> Remember me																												</label>
+																																																																																																									</div>
+																																																																																																									#}
 
 					<button class="btn btn-primary fs-5 w-100 mt-5" type="submit" formnovalidate>
 						Me connecter
