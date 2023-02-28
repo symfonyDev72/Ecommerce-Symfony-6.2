@@ -17,8 +17,9 @@
 
 			<div class="col-lg-6 offset-lg-3 mb-5 mt-3 border rounded p-5 bg-form">
 
-				<div class="d-flex mb-5">
-					<img src="{{ asset('build/img/register.png') }}" class="img-fluid m-auto" width="150">
+				<div class="d-flex mb-5 justify-content-center">
+					<img src="{{ asset('build/img/register.png') }}" class="img-fluid" width="80">
+					<h2 class="ms-2 my-auto">Inscription</h2>
 				</div>
 
 				{% for flash_error in app.flashes('verify_email_error') %}

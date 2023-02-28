@@ -36,7 +36,7 @@
 				{% if app.user %}
 					<ul class="list-unstyled d-flex my-auto pt-lg-0 pt-3">
 						<li class="d-flex align-items-center">
-							<img src="{{ asset(app.user.avatar) }}" alt="user-avatar" width="25" class="rounded-circle">
+							<img src="{{ app.user.avatar ? vich_uploader_asset(app.user,'imageFile') : asset('build/img/default.png') }}" alt="user-avatar" width="25" class="rounded-circle">
 							<p class="text-warning my-auto fw-bold ps-2">{{ app.user.fullName|title }}</p>
 						</li>
 						<li class="ps-3">

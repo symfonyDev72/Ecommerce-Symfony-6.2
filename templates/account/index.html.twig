@@ -2,7 +2,9 @@
 
 {% block body %}
 
-	{% include "partials/_flash_message.html.twig" %}
+	<pre>
+	{{ dump(app.user.avatar) }}
+</pre>
 
 	<div class="container">
 
@@ -10,16 +12,19 @@
 			<div class="col-12">
 				<h1 class="display-5">{{ title }}</h1>
 				<hr>
+				{% include "partials/_flash_message.html.twig" %}
 			</div>
 		</div>
 
 		{% if app.user %}
 			<div class="row">
-				<div class="col-lg-5">
+				<div class="col-lg-4">
 					<div class="card border-0 bg-form">
+
 						<div class="d-flex mt-4">
-							<img src="{{ asset(app.user.avatar) }}" class="card-img-top rounded-circle img-fluid w-50 m-auto">
+							<img src="{{ app.user.avatar ? vich_uploader_asset(app.user,'imageFile') : asset('build/img/default.png') }}" class="card-img-top rounded-circle img-fluid w-50 m-auto">
 						</div>
+
 						<div class="card-body text-center">
 							<h3 class="card-title">{{ app.user.fullName|title  }}</h3>
 							<p>Genre :
@@ -46,78 +51,39 @@
 				</div>
 
 				{# ------------------------------------ #}
-				<div class="col-lg-7 px-lg-5 mt-lg-0 mt-5">
-					<h2>Modifier mes informations</h2>
-					<form class="row g-3 needs-validation" novalidate>
-						<div class="col-md-4">
-							<label for="validationCustom01" class="form-label">First name</label>
-							<input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-							<div class="valid-feedback">
-								Looks good!
-							</div>
+				<div class="col-lg-8 ps-lg-5 mt-lg-0 mt-5">
+					<h2 class="mb-3">Modifier mes informations</h2>
+
+					{{ form_start(accountForm) }}
+
+					{{ form_row(accountForm.gender) }}
+					<div class="row mt-5">
+						<div class="col-lg-6">
+							{{ form_row(accountForm.firstName) }}
 						</div>
-						<div class="col-md-4">
-							<label for="validationCustom02" class="form-label">Last name</label>
-							<input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-							<div class="valid-feedback">
-								Looks good!
-							</div>
+						<div class="col-lg-6">
+							{{ form_row(accountForm.lastName) }}
 						</div>
-						<div class="col-md-4">
-							<label for="validationCustomUsername" class="form-label">Username</label>
-							<div class="input-group has-validation">
-								<span class="input-group-text" id="inputGroupPrepend">@</span>
-								<input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-								<div class="invalid-feedback">
-									Please choose a username.
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<label for="validationCustom03" class="form-label">City</label>
-							<input type="text" class="form-control" id="validationCustom03" required>
-							<div class="invalid-feedback">
-								Please provide a valid city.
-							</div>
-						</div>
-						<div class="col-md-3">
-							<label for="validationCustom04" class="form-label">State</label>
-							<select class="form-select" id="validationCustom04" required>
-								<option selected disabled value="">Choose...</option>
-								<option>...</option>
-							</select>
-							<div class="invalid-feedback">
-								Please select a valid state.
-							</div>
-						</div>
-						<div class="col-md-3">
-							<label for="validationCustom05" class="form-label">Zip</label>
-							<input type="text" class="form-control" id="validationCustom05" required>
-							<div class="invalid-feedback">
-								Please provide a valid zip.
-							</div>
+					</div>
+					<div class="row mt-lg-3 mt-2">
+						<div class="col-12">
+							{{ form_row(accountForm.email) }}
 						</div>
 						<div class="col-12">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-								<label class="form-check-label" for="invalidCheck">
-									Agree to terms and conditions
-								</label>
-								<div class="invalid-feedback">
-									You must agree before submitting.
-								</div>
-							</div>
+							{{ form_row(accountForm.imageFile) }}
 						</div>
-						<div class="col-12">
-							<button class="btn btn-primary" type="submit">Submit form</button>
-						</div>
-					</form>
+					</div>
+					<div class="mt-lg-3 mt-2">
+						<button type="submit" class="btn btn-primary float-end fs-5" onclick="return confirm('Modifier mon profil?')" formnovalidate>Mettre à jour</button>
+					</div>
 				</div>
 
-				{# -------------------------------- #}
+				{{ form_end(accountForm) }}
 
 			</div>
-		{% endif %}
-	</div>
 
+			{# -------------------------------- #}
+
+		</div>
+	{% endif %}
 {% endblock %}
